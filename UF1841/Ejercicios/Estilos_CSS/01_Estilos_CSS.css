@@ -1,0 +1,20 @@
+/* Selectores */
+
+
+/* Selector de elementos, todos los h3 van a ser así */
+h3
+  {
+    font-size: 25px;
+    color: aquamarine;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+
+  /* Selectores por id */
+
+  #inicio
+  {
+    font-size: 44px;
+    
+
+  }

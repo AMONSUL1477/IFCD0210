@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+    width: 70%;
+    min-height: 200px;
+    margin: 0 auto;
+
+
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 40px;
+
+}
+
+nav ul li a {
+    font-size: 25px;
+    color: black;
+}
+
+nav ul li a:hover {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 58px;
+    line-height: 1.5;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.entrada {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 2;
+}
+
+.texto {
+    font-size: 22px;
+    line-height: 1.7;
+    margin-top: 40px;
+}
+
+.texto ul {
+    margin-left: 50px;
+}
+
+.primera_linea {
+    margin-bottom: 20px;
+}
+
+.siguiente {
+    margin-top: 50px;
+}
+
+.pie {
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.pie span {
+    display: inline-block;
+    width: 49%;
+    line-height: 2;
+}
+
+.post
+{
+    border-width: 3px 0px 0px 0px;
+    margin-bottom: 30px;
+}
+
+.fecha
+{
+    font-size: 25;
+    color: grey;
+    line-height: 2;
+    
+}
+.titulo-post
+{
+    font-size: 27px;
+    margin-bottom: 10px;
+
+}
+
+.titulo-post a
+{
+    color: black;
+    text-decoration: none;
+}
+
+.titulo-post a:hover
+{
+    text-decoration: underline;
+}
+
+.extracto
+{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Página About */
+
+.burro
+{
+    background-color: blue;
+    border: solid coral;
+    background-image: url("../imag/fresas.png");
+    background-size: cover ;
+    background-position: left;
+
+    
+    height: 400px;
+    width: 400px;
+
+}
+sevilla
+
