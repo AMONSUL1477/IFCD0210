@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        html
+        /* es para toda la página, si tiene clase no */
+        {
+            font-size: 60px;           
+        }
+
+        .padre
+        {
+            font-size: 20px;
+            color: red;
+        }
+
+        .hijo
+        {
+            font-size: 0.5rem;
+            color: green;
+        }
+
+        .nieto
+        {
+            font-size: 0.5rem;
+        }
+
+
+    </style>
+   
+
+
+</head>
+
+<body>
+
+    <p>
+
+        Unidades relativas
+
+        <ul>
+
+            <li>
+                em: Font-sive. Unidades proporcionales al elemnto padre.
+            </li>
+
+            <li>
+                rem: Font-size. Proporcional al elemento raiz. El html, la mitad
+            </li>
+
+            <li>
+                porcentajes
+            </li>
+
+            <li>
+                vw y hw
+            </li>          
+
+        </ul>
+
+    </p>
+
+    <div class="padre">
+
+        Yo soy tu padre ...
+
+        <p class="hijo">
+
+            Yo soy tu hijo
+            <span class="nieto">
+                Yo soy el nieto
+            </span>
+
+        </p>
+
+    </div>
+    
+</body>
+
+</html>

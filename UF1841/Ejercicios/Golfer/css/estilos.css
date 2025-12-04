@@ -123,7 +123,7 @@ h1 {
 .burro
 {
     background-color: blue;
-    border: solid coral;
+    border: 10px solid coral;
     background-image: url("../imag/fresas.png");
     background-size: cover ;
     background-position: left;
@@ -133,5 +133,19 @@ h1 {
     width: 400px;
 
 }
-sevilla
+
+
+.esquinas
+{
+    height: 400px;
+    width: 400px;
+    background-color: aqua;
+    border: 10px solid teal;
+    border-radius: 200px;
+
+
+
+
+
+}
 

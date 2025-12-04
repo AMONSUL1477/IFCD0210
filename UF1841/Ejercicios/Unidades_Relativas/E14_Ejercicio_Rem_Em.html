@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipografía unidades relativas</title>
+
+    <style>
+
+        html
+        {
+            font-size: 16px;
+        }
+
+        body
+        {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: aliceblue;
+            font-size: 1.6rem;
+        }
+
+        h1
+        {
+            font-size: 3.5rem;
+            border-bottom: 3px solid blue;
+            color: blue;
+        }
+
+        h2
+        {
+            font-size: 2.5rem;
+            color: rgb(166, 153, 236);
+        }
+
+        .padre        
+        {
+            font-size: 2rem;
+            margin: 20px;
+            padding: 1rem;
+            border: 1px solid green;
+            background-color: rgb(215, 213, 213);
+        }
+
+        .hijo
+        {
+            font-size: 1.2rem;
+            padding: 0.8rem;
+            border: 5px dashed rgb(145, 227, 20);
+            
+        }
+
+        .nivel1
+        {
+            font-size: 2rem;
+            margin: bottom 20px;
+            padding: 1rem;
+            border: 1px;
+            border: 1px solid red;
+            background-color: bisque;
+        }
+
+        .nivel2
+        {
+            font-size: 0.8em;
+            padding: 1.5em;
+            border: 1px solid red;
+            margin-top: 1em;
+        }
+
+        .nivel3
+        {
+            font-size: 1.2em;
+            padding: 0.5em;
+            background-color: blue;
+            border: 2px solid green;
+
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>
+        Experimento con unidades de tipografía relativas
+    </h1>
+
+    <div class="padre">
+
+        <h2>
+            Unidad rem
+        </h2>
+        
+        <p>
+            Contenedor padre
+        </p>
+
+        <div class="hijo">
+
+            Elemento hijo.
+
+            <br>
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia officia inventore omnis, praesentium voluptatum ullam quo animi, culpa provident reprehenderit ducimus aliquid deleniti fugit veniam numquam. Perspiciatis repudiandae qui dolorum?
+
+        </div>
+
+    </div>
+
+    <div class="nivel1">
+
+        <h2>
+            Efecto cascada
+        </h2>
+
+        <p>
+            Nivel 1. Contenedor padre font-size 2.0 rem (32px)
+        </p>
+
+        <div class="nivel2">
+
+            <p>
+                Nivel 2. Font-size 1.6rem
+            </p>
+            
+
+            <div>
+
+                <div class="nivel3">
+
+                    <p>
+                        Nivel 3. Font-size 1.2em 
+                    </p>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    
+</body>
+
+</html>
