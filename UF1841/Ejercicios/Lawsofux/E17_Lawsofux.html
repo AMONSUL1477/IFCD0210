@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "IBM Plex Sans", sans-serif;
+        
+
+    }
+
+    html {
+        font-size: 15px;
+        background-color: #d6d6cd;
+    }
+
+    nav a {
+        font-family: "IBM Plex Mono", monospace;
+        padding-right: 1rem;
+        text-decoration: none;
+        color: #1a3c4d;
+        font-weight: 400;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .nav-cont {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+    }
+
+    nav a :hover {
+        text-decoration: underline;
+    }
+
+    .alto {
+        height: 12vh;
+    }
+
+    .contenedor {
+        /* display: flex; */
+        /* justify-content: space-evenly; */
+        /* flex-wrap: wrap; */
+        /* gap: 2rem;  */
+        /* flex-direction:row; */
+        margin: 0 auto;
+        padding: 20px;
+
+        width: 80%;
+
+        
+    }
+
+
+    .entrada {
+        font-family: "IBM Plex Sans", sans-serif;
+        font-size: 2.2rem;
+        margin-top: 60px;
+        margin-bottom: 30px;
+        width: 68%;
+      
+
+    }
+
+    .cont-tarj{
+        display: flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        gap: 2rem;        
+        width: 0 auto;
+        padding-left: 10px;
+        text-align: center;
+        flex-direction: row;
+       
+    }
+
+    .tarjeta {
+
+        background-color: white;
+        border-radius: 10px;
+        width: 300px;     
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 10px;
+        margin-left: 10px;
+
+    }
+    .tarjeta img{
+        max-width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        
+    }
+    .tarjeta h3{
+        font-size: 1.6rem;
+        padding-left: 10px;
+        padding-right: 10px;       
+
+    }
+     .tarjeta p{
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 1.5rem;
+    }
+      
+</style>
+
+<body>
+    <header>
+        <nav class="nav-cont alto">
+            <div>
+
+            </div>
+            <div>
+                <a href="">Tamara</a>
+                <a href="">TARJETAS</a>
+                <a href="">INFORMACIÓN</a>
+                <a href="">TIENDA</a>
+            </div>
+            <div>
+                ESPAÑOL
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="contenedor">
+
+            <div class="entrada">
+                <p>
+                    Laws of UX es una colección de mejores prácticas que los diseñadores pueden considerar al crear
+                    interfaces de usuario.
+                </p>                
+            </div>
+
+            <div class="cont-tarj">
+                <div class="tarjeta">
+                    <img src="imagenes/bola_verde.jpg" alt="Bola_verde">
+                    <h3>
+                       Atención selectiva
+                    </h3>
+                    <p>
+                       El proceso de centrar nuestra atención solo en un subconjunto de los estímulos en el entorno —
+                       normalmente aquellos relacionados con nuestros objetivos.
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/cuadro_rojo.jpg" alt="cuadro_rojo">
+                    <h3>
+                       Carga Cognitiva
+                    </h3>
+                    <p>
+                       La cantidad de recursos mentales necesarios para entender e interactuar con una interfaz..
+                    </p>
+                </div>
+
+                <div class="tarjeta">
+                    <img src="imagenes/triangulo_azul.jpg" alt="cuadro_rojo">
+                    <h3>
+                       Efecto de Estética-Usabilidad
+                    </h3>
+                    <p>
+                       Los usuarios a menudo perciben un diseño estéticamente agradable como un diseño que es más útil.
+                    </p>
+                </div>
+
+
+                
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

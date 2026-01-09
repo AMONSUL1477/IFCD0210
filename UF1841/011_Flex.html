@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción al Flex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+
+
+<style>
+
+    body{
+        font-family: 'Fira Mono';
+        font-size: 25px;
+    }
+    .contenedor
+    {
+        height: 100vh;
+        /* el alto de la ventana */
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: space-between;  */
+        /* space-between distribuye los elementos */
+        /* justify-content: space-around; */
+        /* distribuye alrededor de los elementos el centro es mas ancho */
+        justify-content: space-between;
+        /* los huecos son iguales */
+        justify-content: center;
+        align-items: center;
+        /* centra de forma vertical */
+        gap: 30px;
+        /* hueco entre elementos horizontales no entre los margenes*/
+        align-items: stretch;
+        /* estira en vertical */
+        flex-direction: column;
+        /* indica la direccion flexible */
+
+
+
+
+
+
+    }
+
+    .item
+    {
+       flex-grow: 0;
+       /* para que no crezca es 0 */
+       flex-shrink: 0;
+       /* para que no se encoja */
+       padding: 10px;
+       background-color: aqua;
+       margin: 5px;       
+    }
+
+</style>
+
+
+
+<body>
+    <div class="contenedor">
+        <div class="item">
+            Uno
+        </div>
+
+        <div class="item">
+            Dos
+        </div>
+
+        <div class="item">
+            Tres
+        </div>
+
+        <div class="item">
+            Cuatro
+        </div>
+
+
+    </div>
+
+    
+</body>
+</html>
