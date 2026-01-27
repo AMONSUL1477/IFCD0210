@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function area (base, altura)
+        {
+            let resultado = base * altura;
+            return resultado;
+
+        }
+       
+
+console.log(area(5,8));
+
+    </script>
+
+     
+    
+
+    <script>
+
+        function multiplicar (numero)
+        {
+            
+            for(let i = 1; i < 10; i++)
+            {
+                console.log(numero + " * " + i + " = " + numero*i);           
+            }      
+           
+        }    
+        
+    </script>
+
+    <script>
+
+        function vocales(cadena)
+        {  
+            let contador = 0;
+            for(let i = 0; i < cadena.length; i++)
+            {            
+                switch (cadena[i].toLocaleLowerCase())
+                {
+                   case 'a':
+                   case 'e':
+                   case 'i':
+                   case 'i':
+                   case 'o':
+                   case 'u':
+                      contador ++;
+                      break;
+
+                }
+
+            }
+            return contador;
+        }
+
+        function cuentaVocales2(cadena)
+        {
+            let contador = 0;
+            let vocales = "aeiou";
+            for(let letra of cadena)
+            {
+                if(vocales.includes(letra.toLocaleLowerCase()))
+                {
+                    contador ++;
+
+                }
+
+            }
+            return contador;
+
+
+        }
+
+    
+
+    </script>
+
+    <script>
+
+        function positivo(lista)
+        {
+            let salida = [];
+            for(let i = 0; i < lista.length; i++)
+            {
+                if(lista[i] >= 0)
+                {
+                    salida.push(lista[i]);
+                }               
+                      
+            }    
+            return salida;
+        }
+
+        
+
+
+
+    </script>
+
+
+<script>
+
+
+        function cuentaVocales3(cadena)
+        {  
+            let contador = [0,0,0,0,0];
+            for(let i = 0; i < cadena.length; i++)
+            {            
+                switch (cadena[i].toLocaleLowerCase())
+                {
+                   case 'a':
+                    contador[0]++;
+                    break;
+                   case 'e':
+                    contador[1]++;
+                    break;
+                   case 'i':
+                    contador[2]++;
+                    break;
+
+                   case 'o':
+                    contador[3]++;
+                    break;
+                   case 'u':
+                    contador[4]++;
+                    break;
+
+                }
+
+            }
+            return contador;
+        }
+    
+
+
+</script>
+
+    <script>
+
+        function sumaImpares(numero)
+        {
+            let resultado = 0;
+            for(let i =1; i < numero; i+= 2)
+            {
+                resultado +=i;
+            }  
+            return resultado;
+        }
+
+
+
+
+    </script>
+
+
+    <script>
+
+        function sumaImpares2(numero)
+        {
+            let resultado = 0;
+            for(let i = 0; i < numero; i++)
+            {
+                if(i % 2  == 1)
+                {
+                    resultado +=i;
+                }
+                
+                
+            }  
+            return resultado;
+        }
+
+
+
+
+    </script>
+
+    <script>
+
+    
+        function dosArrays(lista1,lista2)
+        {
+            let salida = [];
+            
+            for(let num of lista1)
+            {
+                if(lista2.includes(num() && !salida.includes(num)))
+                salida.push(num);
+            }
+            return salida;
+        }
+
+
+
+    </script>
+
+
+    <script>
+        function cadenaMayor(cadenas)
+        {
+            let salida = '';
+          
+            for(let cadena of cadenas)
+            
+            {
+                if(lista2.includes(num() && !salida.includes(num)))
+                salida.push(num);
+            }
+            return salida;
+
+        }
+
+
+
+    </script>
+
+    
+
+
+</body>
+</html>

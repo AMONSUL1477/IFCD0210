@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    *
+    {
+        margin: 0;
+        padding: 0;
+
+    html
+    {
+        font-size: 16px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    }
+    
+    .parent 
+    {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .div1 
+    { 
+        grid-area: 1 / 1 / 2 / 6; 
+        background-color: rgb(231, 88, 184);
+    }
+
+    .div2 
+    {
+         grid-area: 2 / 5 / 5 / 6; 
+         background-color: hsl(273, 12%, 63%);
+    }
+ 
+    .div3 
+    { 
+        grid-area: 5 / 1 / 6 / 6; 
+        background-color: rgb(211, 140, 199);
+    }
+
+    .div4 
+    { 
+        grid-area: 2 / 1 / 5 / 5; 
+        background-color: rgb(155, 104, 151);
+    }
+
+    .titulo
+    {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 4rem;
+        text-align: center;
+        padding-top: 1.2rem;
+        color: aliceblue;
+
+    }
+
+    .catalogo
+    {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+        background-image: url(Carrito/64904f97-941a-41ef-9a7c-18f9c92f7d65.jpg);
+        background-position: cover;
+         background-size: 100% 100%;
+
+
+    }
+
+    .producto
+    {
+
+   
+        background-color: rgb(139, 89, 186);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid white;
+        width: 200px;
+        max-height: 400px;
+
+
+    }
+
+    .foto
+    {
+        width: 9rem;
+
+    }
+
+    .video
+    {
+        width: 9rem;
+
+    }
+
+    .nombre
+    {
+        font-size: 1rem;
+        padding: 0.5rem;
+        color: aliceblue;
+
+
+    }
+
+    .descripcion
+    {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        color: aliceblue;
+        text-align: center;
+
+
+    }
+
+    .precio
+    {
+        font-size: larger;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: aliceblue;
+
+
+    }
+
+    .boton_comprar
+    {
+        background-color: aliceblue;
+
+
+        padding: 10px;
+        color: rgb(180, 30, 113);
+        border-radius: 15px;
+        
+
+    }
+
+    .carrito
+    {
+        font-size: 2rem;
+        padding: 0.5rem;
+        color: aliceblue;
+        text-align: center;
+
+
+
+    }
+
+    #pagar
+    {
+        background-color: aliceblue;
+
+
+        padding: 10px;
+        color: rgb(180, 30, 113);
+        border-radius: 15px;
+    }
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+    <div class="parent">
+
+    <div class="div1">
+
+        <h1 class="titulo">Almacén Manolo</h1>
+
+    </div>
+
+
+    <div class="div2">  <div class="carrito">
+        <ul id="lista">
+        </ul>
+        <p>Total: <span id="total">0</span>€</p>
+        <button id="pagar">Pagar</button>
+    </div>
+</div>
+
+    <div class="div3">Pie de página</div>
+
+    <div class="div4 catalogo">
+
+        <div class="producto" id="prod1" data-precio="12.89€">
+
+            <h3 class="nombre">Zapatillas</h3>
+            <img src="Carrito/shopping.jpg" alt="" class="foto">
+            <p class="descripcion">La zapatilla GEL-CUMULUS 28 es una zapatilla de running ligera que ofrece una sensación suave en la planta del pie.</p>
+            <span class="precio">Precio: 12.89</span>
+            <button class="boton_comprar">Comprar</button>
+
+        </div>
+
+        <div class="producto" id="prod1" data-precio="12.89€">
+
+            <h3 class="nombre">Zapatillas</h3>
+            <!-- <img src="Carrito/4380323-hd_1080_1920_30fps.mp4" alt="" class="foto"> -->
+            <video autoplay loop muted playsinline class="video">
+    <source src="Carrito/4380323-hd_1080_1920_30fps.mp4" type="video/mp4">
+  </video>
+            <p class="descripcion">La zapatilla GEL-CUMULUS 28 es una zapatilla de running ligera que ofrece una sensación suave en la planta del pie.</p>
+            <span class="precio">Precio: 12.89</span>
+            <button class="boton_comprar">Comprar</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+   <script>
+        let productos = document.querySelectorAll('.producto');
+        let total = document.getElementById('total');
+        let lista_carrito = document.getElementById('lista');
+        
+        
+        for(let i = 0; i< productos.length; i++){
+            let boton = productos[i].querySelector('.boton_comprar');
+            let precio = productos[i].getAttribute('data-precio');
+            console.log(precio);
+            let nombre = productos[i].querySelector('.nombre');
+            boton.addEventListener('click',function(){
+                let li = document.createElement('li');
+                li.innerHTML = nombre.textContent + " " + precio +"€";
+                lista_carrito.appendChild(li);
+                total.innerHTML = (parseFloat(precio) + parseFloat(total.innerHTML)).toFixed(2);
+
+            })
+        }
+        // ------- Pagar ---------------------
+        let pagar = document.getElementById('pagar');
+        pagar.addEventListener('click',function(){
+            lista_carrito.innerHTML = '';
+            // for(let fila of lista_carrito.querySelectorAll('li')){
+            //     fila.remove();
+            // }
+            total.innerHTML = 0;
+        })
+
+    </script>
+
+
+
+    
+</body>
+</html>
+
+
+
+
+
+
+

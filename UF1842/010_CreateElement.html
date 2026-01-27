@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        function agregar()
+        {
+            let padre = document.getElementById("lista");
+            //let padre = document.querySelector("#lesta");
+            let li = document.createElement("li");
+            li.textContent = "Elemento nuevo";
+            padre.appendChild(li);
+        }
+
+        function eliminar()
+        {
+            let padre = document.getElementById("lista");
+            let li = padre.lastChild;
+            console.log(li);
+            padre.removeChild(li);
+
+        }
+    </script>
+
+<body>
+    <h1>
+        Create Element y Append Child
+    </h1>
+
+    <button onclick="agregar()">Agregar
+
+    </button>
+
+    <button onclick="eliminar()">Eliminar
+
+    </button>
+
+    <ul id="lista">
+        <li>
+            <input type="checkbox">
+            <span>
+                Esta es un tarea
+            </span>
+        </li>
+
+    </ul>
+    
+</body>
+
+</html>

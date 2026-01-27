@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+
+
+
+</style>
+
+<body>
+
+    <h2>
+        1. Al hacer clic en un botón, cambiar el color de fondo de ese botón.
+    </h2>
+
+    <button id="eje1" onclick="cambiarColor()">
+        BOTON
+    </button>
+
+    <script>
+
+        let color1 = "green";
+        let color2 = "blue";
+
+     function cambiarColor()
+     {
+        let btn = document.getElementById("eje1");
+        let colorActual = btn.style.backgroundColor;
+        if(colorActual === color1)
+        {
+            btn.style.backgroundColor = color2;
+
+        }
+        else
+        {
+            btn.style.backgroundColor = color1;
+        }
+     }
+    
+    </script>
+
+    <h2>
+        2. Cuando el usuario coloque el cursor sobre un párrafo, mostrar en la consola un mensaje indicándolo.
+    </h2>
+
+    <p id="eje2" onmouseover="mostrarMensaje()">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    </p>
+
+    <script>
+        function mostrarMensaje()
+        {
+
+            let parrafo = document.getElementById("eje2");
+            if (parrafo.style.backgroundColor=="yelow"){
+                parrafo.style.backgroundColor="";
+            }
+            else{
+                parrafo.style.backgroundColor="yellow";
+
+            }
+            console.log("Pisando");
+
+
+        }
+    </script>
+
+    
+    <p id="parr2">
+        Este parrafo funciona con addEventListener
+    </p>
+
+    <script>
+
+        
+        let p2 = document.getElementById("parr2");
+
+
+        p2.addEventListener("mouseover",ponerAmarillo);
+        p2.addEventListener("mouseleave",quitarAmarillo);
+       
+
+
+
+       
+        function ponerAmarillo()
+        {
+            p2.style.backgroundColor="yelow";
+        }
+
+        function quitarAmarillo()
+        {
+             p2.style.backgroundColor="";
+        }
+    </script>
+
+
+<h2>
+    3. Mostrar cuántas teclas ha presionado el usuario en un campo de texto.
+</h2>
+
+
+<input type="text" id="eje3" placeholder="Escribe aqui">
+
+<p id="eje3" onkeydown="contarTeclas">
+
+    Pulsaciones: <span id="total">
+
+    </span>
+    
+</p>
+
+
+
+<script>
+
+    let contador = 0;
+
+    let texto = document.getElementById("eje3");
+    let total = document.getElementById("total")
+
+    texto.addEventListener("keydown",contarTeclas);
+    texto9.addEventListener("focus",ponerBorde);
+    texto9.addEventListener("blur",quitarBorde);
+       
+
+    function contarTeclas()
+    {
+        contador++;
+        total.innerHTML = contador;
+    }
+          
+        function ponerBorde()
+        {
+            texto.style.borderColor="yelow";
+        }
+
+        function quitarBorde()
+        {
+             texto.style.borderWidth="20px";
+        }
+
+</script>
+
+
+<h2>
+    9. Al hacer clic dentro de un campo de texto, resaltarlo con un borde de color. Al salir del campo, eliminar el borde.
+</h2>
+
+
+
+    <input type="text" id="texto" placeholder="Escribe aqui">
+
+
+
+<script>    
+    
+</script>
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

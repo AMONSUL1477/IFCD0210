@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj_Digital</title>
+
+    <style>
+
+        @font-face 
+        {
+            font-family: "seven";
+            src: url("Fuentes/Seven_Segment.ttf")
+        }
+
+        p
+        {
+            font-family: "seven";
+            font-size: 40px;
+            color: black;
+            font-weight: 900;
+                        
+        }
+
+        div
+        {
+            background-color: #bed9d4;
+            width: fit-content;
+            
+
+        }
+
+        .horas
+        {
+            text-align: center;
+            font-size: 100px;
+            padding: 40px;
+        }
+
+        #segundos
+        {
+
+            font-size: 50px;
+        }
+
+        .separar
+        {
+            padding-left: 15px;
+
+        }
+
+        .centrar
+        {
+            padding-left: 15px;
+            padding-bottom: 15px;
+            p
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+    
+
+    <p class="horas">
+        <span id="horas">0</span>:<span id="minutos">0</span><span id="segundos">0</span>   
+    </p>
+
+    <p class="centrar">
+        <span id="diasem">0</span>
+        <span id="diames">0</span>/<span id="mes">0</span>
+
+        <span class="separar">
+            14º 75%
+        </span>
+    </p>
+
+
+
+
+
+    </div>
+
+    <button onclick="iniciar()">Iniciar</button>
+    <button onclick="parar()">Parar</button>
+    
+
+    <script src="Js/015_Reloj.js"></script>
+</body>
+
+</html>

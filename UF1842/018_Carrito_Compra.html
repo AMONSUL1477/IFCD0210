@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Almacén Don Manolo</h1>
+    <div class="estantes">
+        <div class="producto" id="prod1" data-precio="12.89">
+            <h3 class="nombre">Zapatillas</h3>
+            <img src="" alt="" class="foto">
+            <p class="descripcion"></p>
+            <span class="precio">Precio: 12.89</span>
+            <button class="boton_comprar">Comprar</button>
+        </div>
+        <div class="producto" id="prod2" data-precio="12.89">
+            <h3 class="nombre">Jersey</h3>
+            <img src="" alt="" class="foto">
+            <p class="descripcion"></p>
+            <span class="precio">Precio: 12.89</span>
+            <button class="boton_comprar">Comprar</button>
+        </div>        
+    </div>
+
+    <div class="carrito">
+        <ul id="lista">
+        </ul>
+        <p>Total: <span id="total">0</span>€</p>
+        <button id="pagar">Pagar</button>
+    </div>
+
+    <script>
+        let productos = document.querySelectorAll('.producto');
+        let total = document.getElementById('total');
+        let lista_carrito = document.getElementById('lista');
+        
+        
+        for(let i = 0; i< productos.length; i++){
+            let boton = productos[i].querySelector('.boton_comprar');
+            let precio = productos[i].getAttribute('data-precio');
+            console.log(precio);
+            let nombre = productos[i].querySelector('.nombre');
+            boton.addEventListener('click',function(){
+                let li = document.createElement('li');
+                li.innerHTML = nombre.textContent + " " + precio +"€";
+                lista_carrito.appendChild(li);
+                total.innerHTML = parseFloat(precio) + parseFloat(total.innerHTML);
+
+            })
+        }
+        // ------- Pagar ---------------------
+        let pagar = document.getElementById('pagar');
+        pagar.addEventListener('click',function(){
+            lista_carrito.innerHTML = '';
+            // for(let fila of lista_carrito.querySelectorAll('li')){
+            //     fila.remove();
+            // }
+            total.innerHTML = 0;
+        })
+
+    </script>
+</body>
+</html>
+

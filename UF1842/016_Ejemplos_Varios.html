@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        html
+        {
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        #scrollbar
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10px;
+            background-color: aqua;
+            width: 0;
+            z-index: 1;
+        }
+
+         #scrollgris
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 10px;
+            background-color: rgb(197, 205, 205);
+            width: 100%;
+            z-index: 1;
+        }
+
+        .oscuro
+        {
+            background-color: rgb(57, 57, 56);
+            color: azure;
+        }
+
+        .flecha
+        {
+            width: 150px;
+            height: 150px;
+            background-color: bisque;
+            font-size: 100px;
+            font-weight:bold;
+            text-align: center;
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            position: fixed;
+            right: 5px;
+            bottom: 40px;
+            color: rgb(200, 192, 192);
+            transition: all 2s;
+        }
+/* --------------------------------- */
+        .contenedor
+        {
+            width: 80%;
+            max-width: 600px;
+            background-color: rgb(174, 188, 199);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgb(113, 109, 109);
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .tabs
+        {
+            display: flex;
+            background-color: rgb(107, 165, 191);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .tab
+        {
+            padding: 15px;
+            flex: 1;
+            text-align: center;
+            background-color: rgb(171, 151, 236);
+            color: whitesmoke;
+            cursor: pointer;
+            transition: backgraund-color 0.3s;
+        }
+
+        .tab:hover
+        {
+            background-color: whitesmoke;
+            color: rgb(171, 151, 236);
+        }
+
+        .tab.active
+        {
+            background-color: rgb(99, 99, 206);
+        }
+
+        .tab-content
+        {
+            padding: 20px;
+            display: none;
+            background-color: rgb(175, 201, 215);
+            color: #333;
+        }
+
+        .tab-content.active
+        {
+            display: block;
+
+        } 
+
+
+
+
+
+    </style>
+    
+</head>
+
+<body>
+
+    <div id="scrollgris"></div>
+
+    <div id="scrollbar"></div>
+
+<h2>
+    Barra de progeso con scroll
+</h2>
+
+<div>
+
+    <textarea name="" id="" maxlength="5"></textarea>
+
+    <p>
+        Utilizados <span id="cuenta">0</span> de 100 caracteres
+    </p>
+
+</div>
+
+<div style="height: 800px;">
+
+</div>
+
+<script>
+
+    window.addEventListener('scroll',function()
+
+    {
+        let scrolled = window.scrollY;
+        let altura = document.body.scrollHeight - window.innerHeight;
+        let porcentaje =scrolled/altura;
+
+        document.getElementById("scrollbar").style.width= (scrolled/altura) * 100 + "%";
+        document.getElementById("scrollgris").style.width= scrolled?'100':'0';
+
+        let flecha = document.querySelector('.flecha');
+
+        if(porcentaje > 0.2)
+        {
+            flecha.style.display = "block";
+        }
+        else
+        {
+            flecha.style.display = "none";
+        }
+
+    });
+
+</script>
+
+<button id="btn_tema">
+    Alternar Temas
+</button>
+
+<div class="flecha" onclick="window.scrollTo(0,0)">^</div>
+
+<div style="height: 300px;"></div>
+
+<script>
+
+    const boton = document.getElementById("btn_tema");
+    boton.addEventListener('click',function()
+
+    {
+        document.body.classList.toggle('oscuro');
+
+        boton.textContent = document.body.classList.contains('oscuro')?'Tema Claro':'Tema Oscuro';
+    })
+
+</script>
+
+<script>
+
+    // let cuadroTexto = document.getElementById("cuadro");
+
+    // let cuentaTexto = document.getElementById("cuenta");
+
+    // let historial = [];
+ 
+
+    // cuadroTexto.addEventListener('input',function()
+
+    // {
+    //     cuentaTexto.innerHTML = cuadroTexto.value.length;
+    //     historial.push(cuadroTexto.value)
+    // });
+
+    // let btn_deshacer = document.getElementById("btnDeshacer");
+    // btn_deshacer.addEventListener('click', function()
+    // {
+    //     historial.pop();
+    //     // cuadroTexto.value = 
+    // })   
+
+</script>
+
+
+
+<!-- --- -->
+
+<div class="contenedor">
+
+    <div class="tabs"> 
+        <div class="tab" data-target="tab1">Pestaña 1</div>    
+        <div class="tab" data-target="tab2">Pestaña 2</div>    
+        <div class="tab" data-target="tab3">Pestaña 3</div>
+    </div>
+
+    <div class="tab-content" id='tab1'> 
+      Contenido de la pestaña 1
+    </div>
+
+    <div class="tab-content" id='tab2'> 
+     Contenido de la pestaña 2
+    </div>
+
+    <div class="tab-content" id='tab3'> 
+      Contenido de la pestaña 3
+    </div>
+
+</div>
+
+<script>
+
+    let tabs = document.querySelectorAll(".tab");
+    let contenidos = document.querySelectorAll(".tab-content");
+
+    for(let i = 0; i<tabs.length; i++)
+
+    {tabs[i].addEventListener('click',function()
+
+        {
+          for(let j = 0; j<tabs.length; j++)
+            {
+              tabs[j].classList.remove('active');
+              contenidos[j].classList.remove('active');
+            }
+
+           this.classList.add('active');
+
+           let targetID = this.getAttribute('data-target');
+           let targetContent = document.getElementById(targetID);
+          
+           targetContent.classList.add('active');
+        });
+
+    }
+
+</script>
+
+
+
+    
+</body>
+</html>

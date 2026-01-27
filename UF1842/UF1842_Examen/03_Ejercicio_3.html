@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+
+<body>
+
+    <script>   
+
+    let notas = [4, 6, 8, 6];
+    let suma = 0;
+    // let nota = media;
+
+    function calcularResultado(notas)
+    {  
+        for (let i = 0; i < notas.length; i++) 
+      {
+         suma += notas[i];
+      }
+
+      let media = suma / notas.length;
+      let estado="";
+      let calificacion="";
+       
+        
+        if (media < 5) 
+        {
+            estado = "Suspenso";
+        }
+        else 
+        {
+            estado = "Aprobado";
+        }    
+    
+        if (media < 5) 
+            {
+                 calificacion = "Insuficiente";
+            }
+        else 
+            {
+                if (media < 7) 
+                {
+                     calificacion = "Suficiente";
+                }
+                else 
+                {
+                    if (media < 9) 
+                    {
+                         calificacion = "Notable";
+                    }
+                    else 
+                    {
+                         calificacion = "Sobresaliente";
+                    }
+                }
+            }
+            salida = [media,estado,calificacion]
+            
+            return salida;
+    }
+
+    console.log(calcularResultado([4,6,8,6]));
+
+
+</script>
+
+</body>
+
+</html>
+    
+</body>
+</html>

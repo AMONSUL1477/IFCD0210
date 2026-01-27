@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .tachado span
+        {
+            text-decoration:line-through;
+            color:gray;
+        }
+
+        .lista
+        {
+            border:1px solid blue;
+            width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        #padre
+        {
+            margin-top: 2rem;
+            list-style: none;
+        }
+
+        li
+        {
+            display: flex;
+            padding: 6px;
+            border-bottom: 1px solid gray;
+            align-items: center;
+            gap: 8px;
+            
+        }
+
+        span
+        {
+            flex-grow: 1px;
+        }
+
+        input
+        {
+            width: 10rem;
+        }
+
+
+
+    </style>
+</head>
+
+
+
+<body>
+
+    <div class="lista">
+   
+       <h1>
+         Lista de Tareas
+       </h1>
+
+       <input class="caja" type="text" name="" id="tarea" planceholder="Nombre de la tarea">
+
+       <button onclick="agregarTarea()">
+          Agregar Tarea
+       </button>
+
+       <ul id="padre">
+
+       </ul>
+
+    </div>
+
+    <script>
+
+        function agregarTarea()
+        {
+            let cajaTexto = document.getElementById("tarea");
+            let texto = cajaTexto.value;
+
+            if(texto == '')
+            {
+                return;
+            }
+
+            let li = document.createElement("li");
+            
+
+            let check = document.createElement('input');
+            check.type = "checkbox";
+            check.onclick = function()
+            {
+                cambiaCheck(this);
+            }
+
+            let span = document.createElement('span');
+            span.innerHTML = texto;
+
+            let boton = document.createElement('button');
+            boton.innerHTML = "Eliminar";
+            boton.onclick = function()
+            {
+                eliminarTarea(this);
+                //this se refiere al objeto al que le he hecho click, asocime esta funcion pero no la ejecutes si no hago click
+            }
+
+            li.appendChild(check);
+            li.appendChild(span);
+            li.appendChild(boton);
+
+            let lista = document.getElementById("padre");
+            lista.appendChild(li);
+
+            cajaTexto.value ='';
+
+        }
+
+        function eliminarTarea(boton)
+        {
+            let li = boton.parentNode;
+            li.parentNode.removeChild(li);
+        }
+
+        function cambiaCheck(check)
+        {
+            let li = check.parentNode;
+            if(check.checked)
+            {
+                li.className = 'tachado';
+            }
+            else
+            {
+                li.className = '';
+
+            }
+
+        }
+    </script>
+
+</body>
+</html>
