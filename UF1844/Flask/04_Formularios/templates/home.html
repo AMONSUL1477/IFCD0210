@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <form action="" method="post">
+        <label for="">Paises</label>
+        <select name="pais" id="">
+            <option value="-">--Seleccione--</option>
+            {% for p in paises %}
+            <option value="{{p}}"
+            {%if estado.get('pais') == p %}selected{%endif%}
+            >{{p}}</option>
+            {%endfor%}
+        </select>
+
+        <br><br>    
+
+        <label for="">Géneros</label><br>
+        {% for g in generos %}
+            <input type="radio" name="genero" value="{{g}}"
+            {%if estado.get('genero') == g %}checked{%endif%}
+            >{{g}}<br>
+            
+
+        {%endfor%}
+
+        <br><br>
+
+        <label for="">Hobbies</label><br>
+        {%for h in hobbies%}
+        <input type="checkbox" name="hobbies" value="{{h}}"
+        {%if h in estado.get('hobbies') %}checked{%endif%}
+        >{{h}} <br>
+        {%endfor%}
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <button onclick="window{{url_for('cargar')}}">Cargar</button>
+
+
+    
+</body>
+</html>

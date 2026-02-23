@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/estilos.css')}}">
+    <title>{% block title%} Página nueva {% endblock %}</title>
+</head>
+<body>
+
+<header>
+        <div class="centrado">
+            <div class="cabecera"> <!--  Imágenes -->
+                <div class="imagenes izq">
+                    <a href="#"><img src="{{url_for('static',filename='img/microbit.svg')}}" alt="Microbit"></a>
+                </div>
+                <div class="imagenes der">
+                    <a href="#"><img src="{{url_for('static',filename='img/developer.svg')}}" alt="Developer"></a>
+                </div>
+            </div>
+            <nav class="limpiar">
+                <p class="menu">
+                    <a href="{{url_for('get_software')}}">Software</a>&nbsp;
+                    <a href="{{url_for('get_firmware')}}">Firmware</a>&nbsp;
+                    <a href="#">Hardware</a>&nbsp;
+                    <a href="#">Accessories</a>&nbsp;
+                    <a href="#">Community</a>&nbsp;
+                    <a href="#">R&D</a>&nbsp;
+                    <a href="#">Edit</a>
+                </p>
+            </nav>
+        </div>
+    </header>
+    <h1 class=" centrado titulo"> {%block seccion_h1%}{%endblock%}</h1>
+    <main class="centrado">
+        {%block content%}{%endblock%}
+    </main>
+        <footer>
+        <div class="centrado">
+        <p>Terms of Use Privacy Safeguarding Support Newsletter microbit.org</p>
+        <p>© Copyright 2025 Micro:bit Educational Foundation</p>
+    </div>
+    </footer>
+</body>
+</html>

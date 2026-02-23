@@ -1,0 +1,24 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "nombre": "Electrónica"
+        },
+        {
+            "id": 2,
+            "nombre": "Ropa"
+        },
+        {
+            "id": 3,
+            "nombre": "Jardín"
+        }
+    ],
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "ENZO",
+            "precio": 14.0,
+            "id_categoria": 2
+        }
+    ]
+}

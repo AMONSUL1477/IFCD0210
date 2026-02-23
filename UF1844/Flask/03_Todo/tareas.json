@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "descripcion": "Esta es una prueba",
+        "fecha_alta": "2026-02-09 20:15:19",
+        "fecha_completada": null
+    },
+    {
+        "id": 2,
+        "descripcion": "dos",
+        "fecha_alta": "2026-02-09 20:15:24",
+        "fecha_completada": null
+    },
+    {
+        "id": 3,
+        "descripcion": "tres",
+        "fecha_alta": "2026-02-09 20:15:30",
+        "fecha_completada": null
+    },
+    {
+        "id": 4,
+        "descripcion": "cuatro",
+        "fecha_alta": "2026-02-09 20:15:34",
+        "fecha_completada": null
+    },
+    {
+        "id": 5,
+        "descripcion": "cinco",
+        "fecha_alta": "2026-02-09 20:15:41",
+        "fecha_completada": null
+    }
+]
