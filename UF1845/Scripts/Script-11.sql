@@ -1,0 +1,2 @@
+DELETE FROM Colores 
+WHERE ID = 2
