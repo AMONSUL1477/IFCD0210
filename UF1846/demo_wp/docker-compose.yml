@@ -1,0 +1,29 @@
+services:
+  wordpress:
+    image: wordpress
+    restart: always
+    ports: 
+      - 8080:80
+    environment:
+      db_host: db
+      db_user: exampleuser
+      db_password: examplepass
+      db_name: exampledb
+    volumes:
+      - wordpress:/var/www/html
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      mysql_database: exampledb
+      MYSQL_ROOT_PASSWORD: root
+      mysql_user: exampleuser
+      mysql_password: examplepass
+      mysql_random_root_password: '1'
+    volumes:
+      - db:/var/lib/mysql
+
+volumes:
+  wordpress:
+  db:

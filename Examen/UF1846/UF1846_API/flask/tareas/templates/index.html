@@ -1,0 +1,47 @@
+
+    {%extends 'base.html'%}
+
+    {% block title %}TAREAS{%endblock%}
+
+    {%block content%}
+
+    <h1>Listado de tareas</h1>
+    <p>
+        <a href="{{url_for('crear')}}">Nueva tarea</a>
+    </p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tarea</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+ 
+        </tr>
+        {%for p in tars %}
+        <tr>
+            <td>{{p.id}}</td>
+            <td>{{p.tarea}}</td>
+            <td>{{p.descripcion}}</td>
+            <td>{{p.fecha}}</td>
+            <td>
+                <form method="GET" style="display:inline;">
+                    <a href="{{url_for('editar',id=p.id)}}" class="btn-link">Editar</a>
+                </form>
+                
+                <form action="{{url_for('borrar',id=p.id)}}" method="post" style="display:inline;"
+                onsubmit="return confirm('¿Borrar esta tarea?')">
+                    <button type="submit" class="btn-delete">Borrar</button>
+                </form>
+            </td>
+        </tr>
+
+        {%endfor%}
+    </table>
+    <h2>Subir tarea</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Subir">
+    </form>
+{%endblock%}
+
+

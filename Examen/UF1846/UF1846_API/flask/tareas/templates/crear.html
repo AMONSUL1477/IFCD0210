@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+
+{% block title %}Crear{%endblock%}
+
+{%block content%}
+
+<h1>Crear tarea</h1>
+<form action="" method="POST">
+    <table class="formulario">
+        <tr>
+            <td><label for="">Tarea</label></td>
+            <td><input type="text" name="tarea"></td>
+        </tr>
+        <tr>
+            <td><label for="">Descripción</label></td>
+            <td><input type="text" name="descripcion"></td>
+        </tr>
+                    
+        <tr>
+            <td><label for="">Fecha</label></td>
+            <td><input type="date" name="fecha"></td>
+        </tr> 
+        <tr>
+            <td colspan="2"><button type="submit">Crear</button></td>
+
+        </tr>                 
+    </table>
+    
+    
+</form>
+<p>
+    <a href="{{url_for('index')}}">Volver</a>
+</p>
+
+{%endblock%}

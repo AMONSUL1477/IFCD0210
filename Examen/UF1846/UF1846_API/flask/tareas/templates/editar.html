@@ -1,0 +1,21 @@
+
+    {%extends 'base.html'%}
+
+    {% block title %}Editar{%endblock%}
+
+    {%block content%}
+    <h1>Edición de tarea</h1>
+    <form action="" method="POST">
+        <label for="">Tarea</label>
+        <input type="text" name="tarea" value="{{tarea.tarea}}">
+        <label for="">Descripción</label>
+        <input type="text" name="descripcion" value="{{tarea.descripcion}}">
+
+        
+        <label for="">Fecha</label>
+        <input type="date" name="fecha" value="{{tarea.fecha}}">     
+        <button type="submit">Guardar</button>           
+    </form>
+    <p>        <a href="{{url_for('index')}}">Volver</a>
+    </p>
+{%endblock%}

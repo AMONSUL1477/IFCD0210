@@ -1,0 +1,9 @@
+services:
+  servidor-html:
+    container_name: alfonso_svr
+    #image: servidor-html
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - "D:/MARÍA/Cursos/DAW/IFCD0210/UF1846/compose_alfonso:/data"
