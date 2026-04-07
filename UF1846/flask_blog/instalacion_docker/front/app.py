@@ -1,11 +1,12 @@
 from flask import Flask,render_template,abort,request,session,redirect,flash
 import requests
+import os
 
 app = Flask(__name__)
 app.secret_key = "supersecreto"
 
-API = "http://127.0.0.1:5002/api"
-
+API = os.environ['API'] #"http://127.0.0.1:5002/api"
+print(API)
 def get_posts():
     return requests.get(f"{API}/posts").json()
     
@@ -127,4 +128,4 @@ def delete_post(post_id):
 
 # --------------------------------------------
 if __name__ == '__main__':
-    app.run(port=5000,debug=True)
+    app.run(host='0.0.0.0',port=5000)

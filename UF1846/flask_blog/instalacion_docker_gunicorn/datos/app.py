@@ -1,15 +1,17 @@
 from flask import Flask,request,jsonify
 import mysql.connector
 import config
+import os
 
 app = Flask(__name__)
 
 def get_connection():
-    return mysql.connector.connect(host=config.HOST, 
-                        user=config.USER,
-                        password=config.PASSWORD,
-                        database=config.DATABASE,
-                        port=config.PORT)
+    return mysql.connector.connect(
+                        host=os.environ['DB_HOST'], 
+                        user=os.environ['DB_USER'],
+                        password=os.environ['DB_PASSWORD'],
+                        database=os.environ['DB_NAME'],
+                        port=os.environ['DB_PORT'])
 
 
 
@@ -108,4 +110,4 @@ def delete_post(post_id):
 # --------------------------------------------------------
 
 if __name__ == '__main__':
-    app.run(port=5001, debug=True)
+    app.run(host='0.0.0.0', port=5001)

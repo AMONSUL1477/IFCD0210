@@ -1,10 +1,11 @@
 import requests
 from flask import Flask,request,jsonify
 from werkzeug.security import generate_password_hash,check_password_hash
+import os
 
 app = Flask(__name__)
 
-RUTA_DATOS = 'http://localhost:5001/data'
+RUTA_DATOS = os.environ['DATOS'] #'http://localhost:5001/data'
 
 # ----------------------------
 
@@ -48,7 +49,7 @@ def validar_post(data):
 @app.route("/api/login",methods=['POST'])
 def login():
     data = request.json
-
+    
     user = get_user_by_email(data['email'])
     if not user:
         return jsonify({'error':'El usuario no existe.'}),401
@@ -87,8 +88,8 @@ def get_posts_all():
 @app.route('/api/post/<int:post_id>')
 def get_post(post_id):
     post = get_post_db(post_id)
-    #if not post or post['estado'] != 'publicado':
-    #    return jsonify({'error':'No encontrado'}),404
+    # if not post or post['estado'] != 'publicado':
+    #     return jsonify({'error':'No encontrado'}),404
     
     return jsonify(post)
 
@@ -113,6 +114,7 @@ def create_post():
 @app.route('/api/post/<int:post_id>' , methods=['PUT'])
 def update_post(post_id):
     data = request.json
+    print(data)
     if validar_post(data):
         update_post_db(post_id,data)
         return jsonify({'mensaje':'Post actualizado.'})
@@ -127,4 +129,4 @@ def delete_post(post_id):
 
 #------------------------------------------------
 if __name__ == '__main__':
-    app.run(port=5002,debug=True)
+    app.run(host='0.0.0.0', port=5002)
